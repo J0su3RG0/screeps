@@ -1,0 +1,32 @@
+// Engendrar un creep
+Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE,MOVE], "Harvester1");
+Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE,MOVE], "Harvester2", {working: false});
+
+// Asignar estado de trabajando o no trabajando
+Game.creeps.Harvester1.memory.working = false;
+
+// Asignar un rol a un creep
+Game.creeps.Harvester1.memory.role = 'harvester';
+Game.creeps.Upgrader1.memory.role = 'upgrader';
+
+
+
+
+// Tutorial
+// Harvester
+Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Harvester1',{ memory: { role: 'harvester'} } );
+Game.creeps['Harvester1'].memory.role = 'harvester';
+Game.spawns['Spawn1'].spawnCreep( [WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], 'HarvesterBig',{ memory: { role: 'harvester' } } );
+
+// Upgrader
+Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Upgrader1' );
+Game.creeps['Upgrader1'].memory.role = 'upgrader';
+
+// Builder
+Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Builder1', { memory: { role: 'builder' } } );
+
+// Aniquilar un screep
+Game.creeps['Harvester1'].suicide()
+
+// Activar el modo seguro
+Game.spawns['Spawn1'].room.controller.activateSafeMode();

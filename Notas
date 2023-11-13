@@ -1,0 +1,31 @@
+// Engendrando un creeper
+Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], 'Harvester1', { memory: { role: 'harvester' }});
+Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], 'Harvester2', { memory: { role: 'harvester' }});
+Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Upgrader1', { memory: { role: 'upgrader' }});
+Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Builder1', { memory: { role: 'builder' }});
+Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Builder2', { memory: { role: 'builder' }});
+Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Reparador', { memory: { role: 'reparador' }});
+
+// Engendrando creepers especiales
+Game.spawns['Spawn1'].spawnCreep( [WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], 'HarvesterBig', { memory: { role: 'harvester' }});
+Game.spawns['Spawn1'].spawnCreep( [WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], 'UpgraderBig', { memory: { role: 'upgrader' }});
+Game.spawns['Spawn1'].spawnCreep( [WORK,WORK,WORK,WORK,CARRY,MOVE,MOVE], 'BuilderBig', { memory: { role: 'builder' }});
+
+// Asignar un rol al creep a traves de la memoria
+Game.creeps['Harvester1'].memory.role = 'harvester';
+Game.creeps['Upgrader1'].memory.role = 'upgrader';
+Game.creeps['Builder1'].memory.role = 'builder';
+
+// Mover a un creep
+Game.creeps['Nombre'].moveTo(x,y);
+Game.creeps['Harvester45663484'].moveTo(Game.flags.Rest, {visualizePathStyle: {stroke: '#ffffff'}});
+
+
+// Matar un creep
+Game.creeps['Nombre'].suicide();
+
+// Activar modo seguro
+Game.spawns['Spawn1'].room.controller.activateSafeMode();
+
+// Construir
+Game.spawns['Spawn1'].room.createConstructionSite( 23, 22, STRUCTURE_TOWER );
